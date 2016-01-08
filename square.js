@@ -16,15 +16,14 @@ class Square extends Component {
     Animated.spring(this.state.entrance, {toValue: 1}).start()
   }
   render () {
-    let opacity = this.state.entrance;
     let rotate = this.state.entrance.interpolate({
       inputRange: [0, 1],
-      outputRange: ['-180deg', '0deg']
+      outputRange: ['-90deg', '0deg']
     })
     return (
-      <TouchableOpacity onPress={this.reset}>
+      <TouchableOpacity onPress={this.reset} style={{flex: 1, alignItems: 'center', justifyContent: 'center',}}>
         <Animated.View
-          style={{width: 200, height: 200, backgroundColor: 'red', opacity, transform:[{rotate}]}}/>
+          style={{width: 200, height: 200, backgroundColor: 'red', transform:[{rotate}]}}/>
       </TouchableOpacity>
     )
   }

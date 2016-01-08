@@ -3,13 +3,17 @@ import Square from './square'
 
 const {
   Component,
+  Dimensions,
   View
 } = React
+
+let deviceWidth = Dimensions.get('window').width
+let deviceHeight = Dimensions.get('window').height
 
 class App extends Component {
   render() {
     return (
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{width: deviceWidth, height: deviceHeight}}>
         <Square/>
       </View>
     );
